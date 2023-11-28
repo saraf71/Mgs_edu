@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MGS Edu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: url(1.jpg);
+            /* Dark blue background */
+            color: #F5D7DB;
+            /* Light pink text color */
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;   
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        hr {
+            background-color: #BD83B8;
+            /* Light purple horizontal line */
+            border-style: none;
+            height: 2px;
+            width: 75%;
+            margin: 20px auto;
+        }
+
+        .header {
+            background-color: #08183070;
+            /* Light blue header background */
+            /* position: sticky;
+            top: 0px; */
+            z-index: 1000;
+        }
+
+        .header ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1 1 0;
+        }
+
+        .header ul li {
+            list-style: none;
+        }
+
+        .header ul li img {
+            height: 50px;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            color: #F5D7DB;
+        }
+
+        .header a:hover {
+            transition-duration: 0.5s;
+            color: yellow;
+            font-size:larger;
+        }
+
+        /* search bar */
+        .search-bar {
+            background-color: transparent;
+            border: 1px solid #F5D7DB;
+            border-radius: 20px;
+            color: #F5D7DB;
+            padding: 5px;
+            font-size: 1.25rem;
+            width: 200px;
+        }
+
+        /* search bar image */
+        #searchImg {
+            height: 20px;
+        }
+
+        /* image alignment */
+        .header ul li form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* search bar button */
+        .header ul li button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+        .header ul li form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .header ul li button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+
+
+        /* Centered Heading Styling */
+        .centered-heading {
+            text-align: center;
+            text-shadow: 2px 2px 5px #1B3358;
+            /* Dark blue text shadow */
+            color: #F1916D;
+            /* Orange heading color */
+            font-size: 36px;
+            /* Increased font size */
+            margin: 0;
+            /* Remove default margin */
+            padding: 20px 0;
+            /* Add padding for better spacing */
+            flex: 1;
+            /* Expand to fill available space */
+        }
+
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            /* background-color: #473E66; */
+            /* Dark purple grid background */
+
+            
+
+        }
+
+        /* Grid Item */
+        .grid-item {
+            
+            /* Dark blue grid item background */
+            border: 1px solid yellow;
+            border-radius: 10px;
+            padding: 10px;
+            /* Smaller padding */
+            font-size: 14px;
+            /* Smaller font size */
+            text-align: center;
+            position: relative;
+            transition: transform 0.6s, background-color 0.6s;
+
+        }
+
+        .grid-item a {
+            text-decoration: none;
+            color: #F5D7DB;
+            /* Light pink link text color */
+        }
+
+        .grid-item:hover {
+            background-color: #020a18;
+            /* Dark blue background color on hover */
+            transform: translateY(-5px);
+            /* Move the item up by 5 pixels on hover */
+        }
+
+        /* Soon Label */
+        .soon-label {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background-color: transparent;
+            color: yellow;
+            font-weight: bold;
+            border-radius: 50%;
+            animation: blink 0.5s infinite;
+            /* Blinking animation every 3 seconds */
+        }
+
+        /* Blinking animation */
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+
+
+
+        /* Footer Styles */
+        footer {
+            background-color: #1B3358;
+            /* Dark blue footer background */
+            color: #F5D7DB;
+            /* Light pink text color */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .copyright {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            font-size: 16px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form {
+            background-color: #06142E;
+            /* Dark blue background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .feedback-form h2 {
+            color: #F1916D;
+            /* Orange heading color */
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"],
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #F5D7DB;
+            border-radius: 5px;
+            background-color: #1B3358;
+            /* Dark blue input background */
+            color: #F5D7DB;
+            /* Light pink text color */
+        }
+
+        .feedback-form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: #F1916D;
+            /* Orange submit button background */
+            color: #fff;
+            /* White text color */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .feedback-form input[type="submit"]:hover {
+            background-color: #BD83B8;
+            /* Light purple on hover */
+        }
+
+        body {
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-color: #4b4e6f; */
+            /* Cool blue background */
+            color: #f7f7f7;
+            /* Light beige text color */
+        }
+
+        .header {
+            background-color: url(1.jpg);
+            /* Dark blue header background */
+        }
+
+        .grid-item:hover {
+            background-color: #0a035162;
+            /* Cool blue background on hover */
+        }
+
+        .feedback-form {
+            background-color: #2B3A67;
+            /* Dark blue background for the form */
+        }
+
+        .feedback-form input[type="submit"] {
+            background-color: #F1916D;
+            /* Orange submit button background */
+            color: #fff;
+            /* White text color */
+        }
+
+        .feedback-form input[type="submit"]:hover {
+            background-color: #BD83B8;
+            /* Light purple on hover */
+        }
+
+        .bar {
+            display: flex;
+            justify-content:space-evenly;
+            align-items: center;
+            list-style: none;
+        }
+
+        .one {
+            color: #ffa200;
+            font-size: 20px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .one:hover {
+            transition-duration: 1s;
+            font-size: 25px;
+            color: yellow;
+            /* background-color: rgb(0, 0, 0); */
+            border-radius: 50%;
+            /* animation-name: example;
+            animation-duration: 4s; */
+        }
+
+        /* Reset some default margin and padding */
+        body,
+        h3,
+        p,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the footer container */
+        .company-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Style the company info section */
+        .company-info {
+            flex: 1;
+            max-width: 300px;
+        }
+
+        .company-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Style the social media links */
+        .social-links a {
+            margin-right: 10px;
+        }
+
+        /* Style the support staff section */
+        .support-staff {
+            flex: 1;
+        }
+
+        .support-staff h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .support-staff ul {
+            list-style-type: none;
+        }
+
+        .support-staff li {
+            margin-bottom: 5px;
+        }
+
+
+        /* dropdowm meanu styling 
+        /* Reset default styles */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        Style the main subject links
+        .nav-item a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+        }
+        .bar>li>img{
+            height:50px
+        }
+
+        /* for the logo img  */
+        #mgs_img{
+            background-color: transparent;
+            margin-left: 26%;
+        }
+         /* Top of the Page */
+         .page-top {
+            background-color: #08183070;
+            grid-column: span 3;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <div class="header">
+        <ul>
+            <li><a href=""><img src="L1-transparent background.png" alt="" style="width:175px;height:75px;"></a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Quiz</a></li>
+            <li><a href="">Announcement</a></li>
+            <li><a href="">Bookmark</a></li>
+            <li>
+                <form action="">
+                    <input type="text" class="search-bar" placeholder="Search">
+                    <button type="submit"><img src="search_icon.png" alt="" id="searchImg"></button>
+                </form>
+            </li>
+        </ul>
+    </div>
+   
+    <hr>
+
+    <div class="grid-container">
+
+        <div class="grid-item">
+            <h3><a href="School 8th - 10th/School 8th - 10th.html">School 8<sup>th</sup> - 10<sup>th</sup></a></h3>
+        </div>
+        <div class="grid-item">
+            <h3><a href="School 11th - 12th.html">School 11<sup>th</sup> - 12<sup>th</sup></a></h3>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Engineering Entrance/Engineering Entrance.html">Engineering Entrance</a></h3>
+        </div>
+        <!-- Add more grid items here -->
+        <!-- Example grid item with "Soon" label -->
+        <div class="grid-item">
+            <h3><a href="Medical Entrance.html">Medical Entrance</a></h3>
+            
+        </div>
+        <div class="grid-item">
+            <h3><a href="CAT.html">CAT</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Civil Services.html">Civil Services</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Chartered Accountants (CA).html">Chartered Accountants (CA)</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="NATA.html">NATA</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Gate.html">Gate</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="TOEFL.html">TOEFL</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="GRE.html">GRE</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Banking Exam.html">Banking Exam</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Olympiad.html">Olympiad</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+	    <div class="grid-item">
+            <h3><a href="NTSE.html">NTSE</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+
+        <div class="grid-item">
+            <h3><a href="Homi bhaba.html">Homi Bhaba</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="KVPY.html">KVPY</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="IISC.html">IISC</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="ISI (Indian Statistical Institute).html">ISI (Indian Statistical Institute)</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="CLAT (Law).html">CLAT (Law)</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Defence.html">Defence</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+        <div class="grid-item">
+            <h3><a href="Programming Languages.html">Programming Languages</a></h3>
+            <div class="soon-label">Soon</div>
+        </div>
+
+    </div>
+   
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; 2023 MGS Edu. All Rights Reserved.
+            </div>
+            <div class="about">
+                About MGS Edu: We furnish an array of extensive educational materials to cater to the scholastic needs of our students.
+            </div>
+        </div>
+        <div class="feedback-form">
+            <center><h2>Contact Us</h2></center>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </footer>
+
+    <footer class="company-footer">
+        <div class="company-info">
+            <h3>MGS Edu.</h3>
+            <p>123 Main Street, City</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: mgs.edu23@gmail.com</p>
+        </div>
+       <!-- <div class="social-links">
+            <a href="https://www.facebook.com/company" target="_blank"><img src="facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/company" target="_blank"><img src="instagram.png" alt="Instagram"></a>
+            <a href="https://www.twitter.com/company" target="_blank"><img src="twitter.png" alt="Twitter"></a>
+        </div> -->
+        <div class="support-staff">
+            <h4>About Us</h4>
+        </div>
+    </footer>
+
+
+    <style>
+        .social-links>a {
+            text-decoration: none;
+            color: wheat;
+
+        }
+    </style>
+
+
+
+</body>
+
+</html>

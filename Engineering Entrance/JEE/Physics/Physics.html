@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 1.5rem;
+            margin: 0;
+            padding: 0;
+            background-color: #06142E;
+            /* Light gray background */
+            background: url("1.jpg") no-repeat center center/cover;
+            height: 100%;
+            width: 100%;
+            color: #F5D7DB;
+            /* Dark gray text color */
+        }
+
+        hr {
+            background-color: #BD83B8;
+            /* Gray horizontal line */
+            border-style: none;
+            height: 2px;
+            width: 75%;
+            margin: 20px auto;
+        }
+
+        /* search bar */
+        .search-bar {
+            background-color: transparent;
+            border: 1px solid #F5D7DB;
+            border-radius: 20px;
+            color: #F5D7DB;
+            padding: 5px;
+            font-size: 1.25rem;
+            width: 200px;
+        }
+
+        /* search bar image */
+        #searchImg {
+            height: 20px;
+        }
+
+        /* image alignment */
+        .header ul li form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* search bar button */
+        .header ul li button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+
+        .header {
+            background-color: #08183070;
+            /* Light blue header background */
+            /* position: sticky;
+            top: 0px; */
+            z-index: 1000;
+        }
+
+        .header ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1 1 0;
+        }
+
+        .header ul li {
+            list-style: none;
+        }
+
+        .header ul li img {
+            height: 50px;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            color: #F5D7DB;
+        }
+
+        .header a:hover {
+            transition-duration: 0.5s;
+            color: yellow;
+            font-size:larger;
+        }
+
+
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            /* background-color: #473E66; */
+            /* Light purple grid background */
+        }
+
+        /* Grid Container with internal navigation */
+        .grid-container-nav{
+            display: grid;
+            grid-template-columns: repeat(5,auto);
+            gap: 20px;
+            padding: 20px;
+            background-color: #1b3358d9;
+            position: sticky;
+            top: 50px;
+            z-index: 1000;
+        }
+        .grid-container-nav .grid-item{
+            border: 1px ridge aquamarine;
+            background-color: #06142E;
+        }
+        .grid-container-nav .grid-item:hover{
+            box-shadow: 0px 0px 5px aquamarine;
+        }
+
+        /* Grid Item */
+        .grid-item {
+            /* Light blue grid item background */
+            border: 1px solid yellow;
+            border-radius: 20px;
+            background: transparent;
+            padding: 10px;
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .grid-item a {
+            text-decoration: none;
+            color: #F5D7DB;
+        }
+
+        .grid-heading {
+            font-size: 1.8rem;
+            color: #F5D7DB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+        }
+
+        .grid-item:hover {
+            transition: all 0.35s ease-in-out 0s;
+            background-color: #06142E;
+            /* Light gray background on hover */
+            transform: translateY(-5px);
+            box-shadow: 0px 0px 5px yellow;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #1b33589e;
+            /* Light blue footer background */
+            color: #F5D7DB;
+            /* Orange text color */
+            padding: 20px 0;
+            text-align: center;
+            width: 100vw;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .copyright {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .about {
+            font-size: 16px;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        /* Top of the Page */
+ .page-top {
+            background-color: #08183070;
+            grid-column: span 3;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-top h1 {
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+            color: #f5bd5e;
+        }
+    </style>
+</head>
+
+<body>
+
+     <!-- header -->
+     <div class="header">
+        <ul>
+            <li><a href=""><img src="L1-transparent background.png" alt="" style="width:175px;height:75px;"></a></li>
+            <li><a href="HomePage.lnk">Home</a></li>
+            <li><a href="">About Us</a></li>
+            <li><a href="">Announcement</a></li>
+            <li><a href="">Bookmark</a></li>
+            <li>
+                <form action="">
+                    <input type="text" class="search-bar" placeholder="Search">
+                    <button type="submit"><img src="search_icon.png" alt="" id="searchImg"></button>
+                </form>
+            </li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="grid-container-nav">
+        <div class="grid-item solidback">
+            <a href="#Mechanics">Mechanics</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Fluid Mechanics">Fluid Mechanics</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Waves">Waves</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Wave Optics">Wave Optics</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Electricity & Magnetism">Electricity & Magnetism</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Thermal Physics">Thermal Physics</a>
+        </div>
+        <div class="grid-item solidback">
+            <a href="#Modern Physics">Modern Physics</a>
+        </div>
+    </div>
+
+    <p class="grid-heading" id="Mechanics">Mechanics</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            <a href="C1-Introduction to Physics/C1-Into to Physics.html">Introduction to Physics</a>
+        </div>
+        <div class="grid-item">
+            <a href="C2-Physics and Mathematics/C2-Phy_&_Maths.html">Physics and Mathematics</a>
+        </div>
+        <div class="grid-item">
+            <a href="C3-Kinematics/C3-Kinematics.html">Rest and Motion : Kinematics</a>
+        </div>
+        <div class="grid-item">
+            <a href="C4-Forces/C4-Forces.html">Forces</a>
+        </div>
+        <div class="grid-item">
+            <a href="C5 - NLM/C5-NLM.html">Newton’s Laws of Motion</a>
+        </div>
+        <div class="grid-item">
+            <a href="C6 - Friction/C6-Friction.html">Friction</a>
+        </div>
+        <div class="grid-item">
+            <a href="C7 - Circular Motion/C7-Circular Motion.html">Circular Motion</a>
+        </div>
+        <div class="grid-item">
+            <a href="C8 - WPE/C8-WPE.html">Work, Power & Energy</a>
+        </div>
+        <div class="grid-item">
+            <a href="C9 - COM/C9-COM.html">Centre of Mass, Linear Momentum, Collision</a>
+        </div>
+        <div class="grid-item">
+            <a href="C10 - Rotational Dynamics/C10-RD.html">Rotational Dynamics</a>
+        </div>
+        <div class="grid-item">
+            <a href="C11-Gravitation/C11-Gravitation.html">Gravitation</a>
+        </div>
+        <div class="grid-item">
+            <a href="C12-SHM/C12-SHM.html">Simple Harmonic Motion</a>
+        </div>
+        
+        
+    </div>
+
+    <hr>
+    <p class="grid-heading" id="Fluid Mechanics">Fluid Mechanics</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            <a href="C13-Fluid Mechanics/C13-Fluid Mechanics.html">Fluid Mechanics</a>
+        </div>
+        <div class="grid-item">
+           <a href="C14-Some Mechanical Properties of Matter/C14-Some Mechanical Properties of Matter.html">Some Mechanical Properties of Matter</a> 
+        </div>
+        
+        
+    </div>
+
+    <hr>
+    <p class="grid-heading" id="Waves">Waves</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+           <a href="C15-Wave Motion and Waves on a String/C15-Wave Motion and Waves on a String.html">Wave Motion and Waves on a String</a>
+        </div>
+        <div class="grid-item">
+            <a href="C16-Sound Waves/C16-Sound Waves.html">Sound Waves</a>
+        </div>
+        <div class="grid-item">
+            <a href="C17-Light Waves/C17-Light Waves.html">Light Waves</a>
+        </div>
+       
+    </div>
+
+
+
+    <hr>
+    <p class="grid-heading" id="Wave Optics">Wave Optics</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            <a href="C18-Geometrical Optics/C18-Geometrical Optics.html">Geometrical Optics</a>
+        </div>
+        <div class="grid-item">
+            <a href="C19-Optical Instruments/C19-Optical Instruments.html">Optical Instruments</a>
+        </div>
+        <div class="grid-item">
+            <a href="C20-Dispersion and Spectra/C20-Dispersion and Spectra.html">Dispersion and Spectra</a>
+        </div>
+        <div class="grid-item">
+            <a href="C21-Speed of Light/C21-Speed of Light.html">Speed of Light</a>
+        </div>
+        <div class="grid-item">
+            <a href="C22-Photometry/C22-Photometry.html">Photometry</a>
+        </div>     
+        
+    </div>
+
+
+    <hr>
+    <p class="grid-heading" id="Electricity & Magnetism">Electricity & Magnetism</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            <a href="C23-Electric Field and Potential Energy/C23-Electric Field and Potential Energy.html">Electric Field and Potential Energy</a>
+        </div>
+        <div class="grid-item">
+            <a href="C24-Gauss's Law/C24-Gauss's Law.html">Gauss’s Law</a>
+        </div>
+        <div class="grid-item">
+            <a href="C25-Capacitors/C25-Capacitors.html">Capacitors</a>
+        </div>
+        <div class="grid-item">
+            Electric Current in Conductors
+        </div>
+        <div class="grid-item">
+            Thermal and Chemical Effects of Electric Current
+        </div>
+        <div class="grid-item">
+            Magnetic Field
+        </div>
+        <div class="grid-item">
+            Magnetic Field due to a Current
+        </div>
+        <div class="grid-item">
+            Permanent Magnets
+        </div>
+        <div class="grid-item">
+            Magnetic Properties of Matter
+        </div>
+        <div class="grid-item">
+            Electromagnetic Induction
+        </div>
+        <div class="grid-item">
+            Alternating Current
+        </div>
+        <div class="grid-item">
+            Electromagnetic Waves
+        </div>
+        <div class="grid-item">
+            Electric Current through Gases
+        </div>        
+    </div>
+
+    <hr>
+    <p class="grid-heading" id="Thermal Physics">Thermal Physics</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            Heat and Temperature 
+        </div>
+        <div class="grid-item">
+            Kinetic Theory of Gases
+        </div>
+        <div class="grid-item">
+            Calorimetry
+        </div>
+        <div class="grid-item">
+            Laws of Thermodynamics
+        </div>
+        <div class="grid-item">
+            Specific Heat Capacities of Gases
+        </div>
+        <div class="grid-item">
+            Heat Transfer
+        </div>
+        
+    </div>
+    
+    
+    <hr>
+    <p class="grid-heading" id="Modern Physics">Modern Physics</p>
+    <div class="grid-container">
+        <!-- Grid items here -->
+        <div class="grid-item">
+            Photoelectric Effect and Wave–Particle Duality
+        </div>
+        <div class="grid-item">
+            Bohr’s Model and Physics of the Atom
+        </div>
+        <div class="grid-item">
+            X-rays
+        </div>
+        <div class="grid-item">
+            Semiconductors and Semiconductor Devices
+        </div>
+        <div class="grid-item">
+            The Nucleus
+        </div>
+        <div class="grid-item">
+            The Special Theory of Relativity
+        </div>
+        
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; 2023 MGS Edu. All Rights Reserved.
+            </div>
+            <div class="about">
+                About MGS Edu: We furnish an array of extensive educational materials to cater to the scholastic needs of our students.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
