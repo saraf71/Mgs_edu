@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Entrance</title>
+    
+</head>
+<style>
+  body {
+            font-family: Arial, sans-serif;
+            background-color: #06142E;
+            background-size: cover;
+            background-attachment: fixed;
+            /* Dark blue background */
+            color: #F5D7DB;
+            /* Light pink text color */
+            background-image: url(background.jpeg);
+            background-repeat: no-repeat;   
+            height: 100%;
+            width: 100%;
+        }
+        hr {
+            background-color: #BD83B8;
+            /* Light purple horizontal line */
+            border-style: none;
+            height: 2px;
+            width: 75%;
+            margin: 20px auto;
+        }
+        .header {
+            background-color: #08183070;
+            /* Light blue header background */
+            position: sticky;
+            top: 16.5px; 
+            z-index: 1000;
+        }
+
+        .header ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            flex: 1 1 0;
+        }
+
+        .header ul li {
+            list-style: none;
+        }
+
+        .header ul li img {
+            height: 50px;
+        }
+
+        .header ul li a {
+            text-decoration: none;
+            color: #F5D7DB;
+        }
+
+        .header a:hover {
+            transition-duration: 0.5s;
+            color: yellow;
+            font-size:larger;
+        }
+
+        /* search bar */
+        .search-bar {
+            background-color: transparent;
+            border: 1px solid #F5D7DB;
+            border-radius: 20px;
+            color: #F5D7DB;
+            padding: 5px;
+            font-size: 1.25rem;
+            width: 200px;
+        }
+
+        /* search bar image */
+        #searchImg {
+            height: 20px;
+        }
+
+        /* image alignment */
+        .header ul li form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* search bar button */
+        .header ul li button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+
+        /* Top of the Page */
+        .page-top {
+            background-color: #08183070;
+            grid-column: span 3;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-top h1 {
+            text-align: center;
+        }
+        /* Centered Heading Styling */
+        .centered-heading {
+            text-align: center;
+            text-shadow: 2px 2px 5px #1B3358;
+            /* Dark blue text shadow */
+            color: #F1916D;
+            /* Orange heading color */
+            font-size: 36px;
+            /* Increased font size */
+            margin: 0;
+            /* Remove default margin */
+            padding: 20px 0;
+            /* Add padding for better spacing */
+            flex: 1;
+            /* Expand to fill available space */
+        }
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
+            grid-template-rows: repeat(5, 5rem);
+            gap: 20px;
+            padding: 20px;
+            /* background-color: #473E66; */
+            /* Dark purple grid background */
+
+            
+
+        }
+        /* Grid Item */
+        .grid-item {
+            
+            /* Dark blue grid item background */
+            border: 1px solid yellow;
+            border-radius: 10px;
+            padding: 10px;
+            /* Smaller padding */
+            font-size: 14px;
+            /* Smaller font size */
+            text-align: center;
+            position: relative;
+            transition: transform 0.6s, background-color 0.6s;
+
+        }
+        .grid-item a {
+            text-decoration: none;
+            color: #F5D7DB;
+            /* Light pink link text color */
+        }
+        .grid-item:hover {
+            background-color: #020a18;
+            /* Dark blue background color on hover */
+            transform: translateY(-5px);
+            /* Move the item up by 5 pixels on hover */
+        }
+        .grid-title {
+            font-weight:bold;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        /* Blinking animation */
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+        body {
+            background-image: url(1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-color: #4b4e6f; */
+            /* Cool blue background */
+            color: #f7f7f7;
+            /* Light beige text color */
+        }
+        .header {
+            background-color: url(1.jpg);
+            /* Dark blue header background */
+        }
+
+        .grid-item:hover {
+            background-color: #0a035162;
+            /* Cool blue background on hover */
+        }
+        .bar {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+
+
+        }
+        .one {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .one:hover {
+            transition-duration: 1s;
+            font-size: 25px;
+            color: yellow;
+            /* background-color: rgb(0, 0, 0); */
+            border-radius: 50%;
+            /* animation-name: example;
+            animation-duration: 4s; */
+        }
+        /* Reset some default margin and padding */
+        body,
+        h3,
+        p,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        /* dropdowm meanu styling 
+        /* Reset default styles */
+        body,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the navigation bar */
+        .navbar {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        Style the main subject links
+        .nav-item a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+        }
+        .bar>li>img{
+            height:50px
+        }
+
+        /* for the logo img  */
+        #mgs_img{
+            background-color: transparent;
+        }
+        h2{
+            text-align: center;
+            color: #f5bd5e;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        .search-bar {
+            background-color: transparent;
+            border: 1px solid #F5D7DB;
+            border-radius: 20px;
+            color: #F5D7DB;
+            padding: 5px;
+            font-size: 1.25rem;
+            width: 200px;
+        }
+        #searchImg {
+            height: 20px;
+        }
+        .header ul li form {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .header ul li button {
+            background: transparent;
+            border: transparent;
+            cursor: pointer;
+        }
+        #mgs_img{
+            background-color: transparent;
+            margin-right: 60%;
+        }
+        #ads{
+            grid-row: span 5;
+            background-color: white;
+        }
+
+    
+
+</style>
+<body>
+   <!-- header -->
+   <div class="header">
+    <ul>
+        <li><a href=""><img src="L1-transparent background.png" alt="" style="width:175px;height:75px;"></a></li>
+        <li><a href=""><a href="HomePage.lnk">Home</a></a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Announcement</a></li>
+        <li><a href="">Bookmark</a></li>
+        <li>
+            <form action="">
+                <input type="text" class="search-bar" placeholder="Search">
+                <button type="submit"><img src="search_icon.png" alt="" id="searchImg"></button>
+            </form>
+        </li>
+    </ul>
+</div>
+<br>
+<h2>Engineering Entrance</h2>
+    <hr>
+    
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-title"><a href="JEE/JEE.html">JEE</a></div>
+        </div>
+        <div class="grid-item" id="ads">
+            <div class="grid-title">ADS</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-title">BITSAT</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-title">VITEEE</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-title">SRMJEE</div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-title">CET</div>
+        </div>
+    </div>
+</body>
+</html>
